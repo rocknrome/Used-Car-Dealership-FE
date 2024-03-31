@@ -27,10 +27,10 @@ const App = () => {
   }
 
   return (
-    <div className="app-content">
-    <h1>Cars for Sale</h1>
-    <CarList cars={cars} />
-  </div>
+    <div className="centered-container">
+  <h1>Cars for Sale</h1>
+  <CarList cars={cars} />
+</div>
   );
 };
 
