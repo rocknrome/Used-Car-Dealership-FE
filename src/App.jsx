@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CarList from './CarList/CarList';
+import './styles.css';
+
 
 const App = () => {
   const [cars, setCars] = useState([]);
@@ -25,10 +27,10 @@ const App = () => {
   }
 
   return (
-      <div>
-          <h1>Cars for Sale</h1>
-          <CarList cars={cars} />
-      </div>
+    <div className="app-content">
+    <h1>Cars for Sale</h1>
+    <CarList cars={cars} />
+  </div>
   );
 };
 
