@@ -6,7 +6,7 @@ const CarList = ({ cars }) => {
   console.log(cars);
   return (
     <div className="car-list-container">
-      <h1>Cars for Sale</h1>
+      
       {cars.map((car) => (
         <Link to={`/cars/${car.id}`} key={car.id} style={{ textDecoration: 'none', color: 'inherit' }}>
           <div className="car-card">

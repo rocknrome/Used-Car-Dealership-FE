@@ -30,7 +30,7 @@ const App = () => {
   return (
     <Router>
       <div className="app-content">
-        
+        <h1>Cars for Sale</h1>
         <Routes>
             <Route path="/" element={<CarList cars={cars} />} />
             <Route path="/cars/:carId" element={<CarShowPage />} />
