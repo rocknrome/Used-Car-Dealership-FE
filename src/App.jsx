@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CarList from './CarList/CarList';
-import CarShowPage from './CarShowPage/CarShowPage'; // Make sure the path matches your file structure
+import CarShowPage from './CarShowPage/CarShowPage';
 import './styles.css';
 
 const App = () => {
@@ -30,7 +30,6 @@ const App = () => {
   return (
     <Router>
       <div className="app-content">
-        <h1>Cars for Sale</h1>
         <Routes>
             <Route path="/" element={<CarList cars={cars} />} />
             <Route path="/cars/:carId" element={<CarShowPage />} />
