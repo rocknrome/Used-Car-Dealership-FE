@@ -111,3 +111,42 @@
       background-color: #f9f9f9;
     }
   }
+
+  /*car show page styling*/
+  .car-show-container {
+    padding: 20px;
+    max-width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
+  .car-show-header {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .car-show-image {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    border: solid 1px #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .car-show-detail {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+  }
+
+  .car-show-description {
+    font-size: 16px;
+    color: #666;
+    white-space: pre-line;
+  }
+
