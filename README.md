@@ -1,8 +1,27 @@
-# React + Vite
+# Used Car Dealership Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application designed to manage a used car dealership, providing functionality for listing cars, adding new cars to inventory, editing car details, and viewing car details.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **CRUD Operations:** Allows user/manager to create, read, update, and delete car listings.
+- **Responsive Design:** Ensures the application works well on various devices and screen sizes.
+- **API Integration:** Communicates with the backend Django server to fetch and update car data.
+- **Image Upload:** Supports uploading photos of cars to be displayed in listings.
+
+## Technologies Used
+
+- **Backend:** Django, Django REST Framework
+- **Frontend:** React, Vite
+- **Database:** SQLite / PostgreSQL
+- **Styling:** CSS / Bootstrap / Tailwind CSS
+
+## Access the application
+The final project deployed on Render (link)
+
+## Wireframes
+![alt text](prep/Wireframe.png)
+
+## Screenshots
+(include image web/mobile)
+
