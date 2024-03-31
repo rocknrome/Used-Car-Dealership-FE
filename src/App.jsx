@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+const CarList = () => {
+    const [cars, setCars] = useState([]);
+    const [error, setError] = useState('');
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    useEffect(() => {
+        fetch('https://used-car-dealership-be.onrender.com/api/cars/')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then((data) => setCars(data))
+            .catch((error) => {
+                console.error("Fetching cars failed:", error);
+                setError("Failed to load cars from the backend.");
+            });
+    }, []);
 
-export default App
+    if (error) {
+        return <p>{error}</p>;
+    }
+
+    return (
+        <div>
+            <h1>Cars for Sale</h1>
+            <ul>
+                {cars.map((car) => (
+                    <li key={car.id}>{car.make} {car.model} - {car.year}</li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default CarList;
