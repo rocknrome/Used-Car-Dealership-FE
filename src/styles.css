@@ -80,11 +80,11 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease;
 }
 
 .car-card:hover {
-  transform: translateY(-12px);
+  transform: scale(1.05);
 }
 
   .car-image-container {
