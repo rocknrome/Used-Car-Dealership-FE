@@ -11,8 +11,15 @@ const CarShowPage = () => {
 
   useEffect(() => {
     const fetchCarDetails = async () => {
+      if (!carId) {
+        setError('Car ID is invalid');
+        setLoading(false);
+        return;
+      }
+      
       try {
-        const response = await fetch(`https://used-car-dealership-be.onrender.com/api/cars/${carId}`);
+        const url = `https://used-car-dealership-be.onrender.com/api/cars/${encodeURIComponent(carId)}`;
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error('Could not fetch car data');
         }
@@ -37,7 +44,7 @@ const CarShowPage = () => {
     const confirmation = window.confirm('Are you sure you want to delete this car?');
     if (confirmation) {
       try {
-        const response = await fetch(`https://used-car-dealership-be.onrender.com/api/cars/${carId}`, {
+        const response = await fetch(`https://used-car-dealership-be.onrender.com/api/cars/${encodeURIComponent(carId)}`, {
           method: 'DELETE',
         });
         if (!response.ok) {
