@@ -12,7 +12,7 @@ const CarList = ({ cars }) => {
   return (
     <div>
       <h1>Cars for Sale</h1>
-      <button onClick={handleAddCarClick} className="add-car-btn">Add a Car</button>
+      <button onClick={handleAddCarClick} className="add-car-button">Add a Car</button> {/* Update class name here */}
       <div className="car-list-container">
         {cars.map((car) => (
           <Link to={`/cars/${car.id}`} key={car.id} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -34,6 +34,7 @@ const CarList = ({ cars }) => {
       </div>
     </div>
   );
+
 };
 
 export default CarList;

@@ -9,34 +9,35 @@ const CarShowPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    const fetchCarDetails = async () => {
-      if (!carId) {
-        setError('Car ID is invalid');
-        setLoading(false);
-        return;
-      }
-      
-      try {
-        const url = `https://used-car-dealership-be.onrender.com/api/cars/${encodeURIComponent(carId)}`;
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error('Could not fetch car data');
-        }
-        const data = await response.json();
-        setCar(data);
-      } catch (err) {
-        setError(err.message);
-        console.error("Fetching car failed:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchCarDetails = async () => {
+    if (!carId) {
+      setError('Car ID is invalid');
+      setLoading(false);
+      return;
+    }
 
+    try {
+      const url = `https://used-car-dealership-be.onrender.com/api/cars/${encodeURIComponent(carId)}`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Could not fetch car data');
+      }
+      const data = await response.json();
+      setCar(data);
+    } catch (err) {
+      setError(err.message);
+      console.error("Fetching car failed:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
     fetchCarDetails();
-  }, [carId]);
+  }, []); // Fetch car details when component mounts
 
   const handleBackClick = () => {
+    // Navigate back to the inventory page
     navigate('/');
   };
 

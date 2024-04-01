@@ -205,3 +205,19 @@
   .delete-car-btn:hover {
     background-color: #4981bd;
   }
+
+  .add-car-button {
+    margin-bottom: 20px;
+    margin-right: 5px;
+    padding: 10px 20px;
+    background-color: #a5bcd6;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .add-car-button:hover {
+    background-color: #4981bd;
+  }

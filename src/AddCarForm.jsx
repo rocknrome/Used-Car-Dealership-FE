@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { addCar } from './services/carService';
+import { useNavigate } from 'react-router-dom';
 
 const AddCarForm = () => {
+  const navigate = useNavigate();
   const [carData, setCarData] = useState({
     make: '',
     model: '',
@@ -10,6 +12,7 @@ const AddCarForm = () => {
     price: '',
     description: '',
     photo_url: '',
+    color: '',
   });
   const [error, setError] = useState('');
 
@@ -35,11 +38,17 @@ const AddCarForm = () => {
         price: '',
         description: '',
         photo_url: '',
+        color: '',
       });
     } catch (error) {
       console.error('Error adding car:', error);
       setError('Failed to add the car. Please try again.');
     }
+  };
+
+  // Function to handle clicking the "Back to inventory" button
+  const handleBackClick = () => {
+    navigate('/');
   };
 
   return (
@@ -55,7 +64,10 @@ const AddCarForm = () => {
       
       {error && <p className="error-message">{error}</p>}
       
-      <button type="submit">Add Car</button>
+        <div>
+            <button type="submit" className="add-car-button">Add Car</button>
+            <button type="button" onClick={handleBackClick} className="add-car-button">Back to inventory</button>
+        </div>
     </form>
   );
 };

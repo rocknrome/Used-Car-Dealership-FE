@@ -61,8 +61,20 @@ const EditCarPage = () => {
       <form onSubmit={handleSubmit} className="edit-car-form">
         <label htmlFor="make">Make:</label>
         <input id="make" name="make" type="text" value={car.make} onChange={handleChange} required />
-
-        {/* Add other input fields similar to the above */}
+        <label htmlFor="model">Model:</label>
+        <input id="model" name="model" type="text" value={car.model} onChange={handleChange} required />
+        <label htmlFor="color">Color:</label>
+        <input id="color" name="color" type="text" value={car.color} onChange={handleChange} required />
+        <label htmlFor="year">Year:</label>
+        <input id="year" name="year" type="number" value={car.year} onChange={handleChange} required />
+        <label htmlFor="mileage">Mileage:</label>
+        <input id="mileage" name="mileage" type="number" value={car.mileage} onChange={handleChange} required />
+        <label htmlFor="price">Price:</label>
+        <input id="price" name="price" type="text" value={car.price} onChange={handleChange} required />
+        <label htmlFor="description">Description:</label>
+        <textarea id="description" name="description" value={car.description} onChange={handleChange} />
+        <label htmlFor="photo_url">Photo URL:</label>
+        <input id="photo_url" name="photo_url" type="text" value={car.photo_url} onChange={handleChange} />
 
         <button type="submit" className="submit-btn">Update Car</button>
       </form>

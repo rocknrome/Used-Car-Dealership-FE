@@ -11,7 +11,8 @@ export const fetchCars = async () => {
 
 // Fetch a single car by ID
 export const fetchCarById = async (carId) => {
-  const response = await fetch(`${BASE_URL}/${carId}`);
+  const normalizedUrl = `${BASE_URL.replace(/\/$/, '')}/${carId}`;
+  const response = await fetch(normalizedUrl);
   if (!response.ok) {
     throw new Error(`Failed to fetch car with ID ${carId}: ${response.statusText} (${response.status})`);
   }
@@ -35,18 +36,23 @@ export const addCar = async (carData) => {
 
 // Update an existing car
 export const updateCar = async (carId, carData) => {
-  const response = await fetch(`${BASE_URL}/${carId}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(carData),
-  });
-  if (!response.ok) {
-    throw new Error(`Failed to update car: ${response.statusText} (${response.status})`);
-  }
-  return response.json();
-};
+    // Exclude the 'photo' field from the carData object
+    const { photo, ...updatedCarData } = carData;
+
+    const normalizedUrl = `${BASE_URL.replace(/\/$/, '')}/${carId}/`;
+    const response = await fetch(normalizedUrl, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedCarData),
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to update car: ${response.statusText} (${response.status})`);
+    }
+    return response.json();
+  };
+
 
 // Delete a car
 export const deleteCar = async (carId) => {
