@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import '../styles.css';
 
 const CarShowPage = () => {
@@ -29,9 +29,26 @@ const CarShowPage = () => {
     fetchCarDetails();
   }, [carId]);
 
-  // Navigate back to the car list
   const handleBackClick = () => {
     navigate('/');
+  };
+
+  const handleDelete = async () => {
+    const confirmation = window.confirm('Are you sure you want to delete this car?');
+    if (confirmation) {
+      try {
+        const response = await fetch(`https://used-car-dealership-be.onrender.com/api/cars/${carId}`, {
+          method: 'DELETE',
+        });
+        if (!response.ok) {
+          throw new Error('Failed to delete car');
+        }
+        navigate('/'); // Redirect back to the inventory list after deletion
+      } catch (err) {
+        setError(err.message);
+        console.error("Deleting car failed:", err);
+      }
+    }
   };
 
   if (loading) return <div>Loading...</div>;
@@ -40,7 +57,11 @@ const CarShowPage = () => {
 
   return (
     <div className="car-show-container">
-      <button onClick={handleBackClick} className="back-to-list-btn">Back to inventory</button>
+      <div className="navigation-buttons">
+        <button onClick={handleBackClick} className="back-to-list-btn">Back to inventory</button>
+        <Link to={`/cars/edit/${carId}`} className="edit-car-btn">Edit</Link>
+        <button onClick={handleDelete} className="delete-car-btn">Delete</button>
+      </div>
       <h2 className="car-show-header">{car.year} {car.make} {car.model}</h2>
       <img src={car.photo_url} alt={`${car.make} ${car.model}`} className="car-show-image" />
       <div className="car-show-detail"><strong>Color:</strong> {car.color}</div>

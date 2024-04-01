@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CarList = ({ cars }) => {
   return (
     <div>
-      <h1>Cars for Sale</h1> {/* Header moved here */}
+      <h1>Cars for Sale</h1>
       <div className="car-list-container">
         {cars.map((car) => (
           <Link to={`/cars/${car.id}`} key={car.id} style={{ textDecoration: 'none', color: 'inherit' }}>

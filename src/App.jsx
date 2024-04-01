@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CarList from './CarList/CarList';
 import CarShowPage from './CarShowPage/CarShowPage';
 import './styles.css';
+import EditCarPage from './EditCarPage';
 
 const App = () => {
   const [cars, setCars] = useState([]);
@@ -33,6 +34,7 @@ const App = () => {
         <Routes>
             <Route path="/" element={<CarList cars={cars} />} />
             <Route path="/cars/:carId" element={<CarShowPage />} />
+            <Route path="/cars/edit/:carId" element={<EditCarPage />} />
         </Routes>
       </div>
     </Router>
