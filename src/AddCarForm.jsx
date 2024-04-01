@@ -64,10 +64,11 @@ const AddCarForm = () => {
       
       {error && <p className="error-message">{error}</p>}
       
-        <div>
-            <button type="submit" className="add-car-button">Add Car</button>
-            <button type="button" onClick={handleBackClick} className="add-car-button">Back to inventory</button>
-        </div>
+      <div className="form-btn-container">
+        <button type="submit" className="add-car-button">Add Car</button>
+        <button type="button" onClick={handleBackClick} className="add-car-button">Back to inventory</button>
+      </div>
+
     </form>
   );
 };

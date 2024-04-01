@@ -75,12 +75,17 @@
 }
 
 .car-card {
-    margin-bottom: 15px;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-  }
+  margin-bottom: 15px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+}
+
+.car-card:hover {
+  transform: translateY(-12px);
+}
 
   .car-image-container {
     width: 100%;
@@ -152,6 +157,7 @@
 /*back to list button*/
   .back-to-list-btn {
     margin-bottom: 20px;
+    margin-top: 20px;
     margin-right: 5px;
     padding: 10px 20px;
     background-color: #a5bcd6;
@@ -220,4 +226,26 @@
 
   .add-car-button:hover {
     background-color: #4981bd;
+  }
+
+  button.submit-btn {
+    margin-bottom: 20px;
+    margin-right: 5px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: #a5bcd6;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  button.submit-btn:hover {
+    background-color: #4981bd;
+  }
+
+  /*extra-styling*/
+  .form-btn-container {
+    margin-top: 20px;
   }
