@@ -11,8 +11,10 @@ const CarList = ({ cars }) => {
 
   return (
     <div>
-      <h1>Cars for Sale</h1>
-      <button onClick={handleAddCarClick} className="add-car-button">Add a Car</button> {/* Update class name here */}
+      <div className="header-container">
+        <img src="https://live.staticflickr.com/65535/53627450262_be6b5d1702_n.jpg" alt="Logo" className="logo" />
+      </div>
+      <button onClick={handleAddCarClick} className="add-car-button">Sell Your Car</button>
       <div className="car-list-container">
         {cars.map((car) => (
           <Link to={`/cars/${car.id}`} key={car.id} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -24,9 +26,10 @@ const CarList = ({ cars }) => {
                 <h3>{`${car.make} ${car.model}`}</h3>
                 <p>Color: {car.color}</p>
                 <p>Year: {car.year}</p>
-                <p>Mileage: {car.mileage} miles</p>
-                <p>Price: ${car.price}</p>
+                <p>Mileage: {new Intl.NumberFormat('fr-FR').format(car.mileage)} miles</p>
+                <p>Price: ${new Intl.NumberFormat('en-US').format(car.price)}</p>
                 <p>{car.description}</p>
+                <button className="buy-now-button">Buy Now</button>
               </div>
             </div>
           </Link>
@@ -34,7 +37,6 @@ const CarList = ({ cars }) => {
       </div>
     </div>
   );
-
 };
 
 export default CarList;

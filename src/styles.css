@@ -66,6 +66,11 @@
     text-align: left;
   }*/
 
+.header-container {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
 .car-list-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -87,165 +92,235 @@
   transform: scale(1.05);
 }
 
-  .car-image-container {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 10px;
-  }
+/*car detail(description) styling*/
 
-  .car-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 10px;
-  }
 
-  .car-info {
-    background-color: rgb(224, 224, 224);
-    padding: 15px;
-  }
+/*buy now button*/
+.buy-now-button {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease; /* Smooth transition for opacity and visibility */
+  margin-top: 10px;
+  background-color: #a5bcd6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 
-  @media (prefers-color-scheme: light) {
-    :root {
-      color: #213547;
-      background-color: #ffffff;
-    }
+/*static buy button*/
+.buy-now-button-static{
+  margin-top: 20px;
+  background-color: #a5bcd6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 
-    button {
-      background-color: #f9f9f9;
-    }
+.buy-now-button-static:hover {
+  background-color: #4981bd;
+}
+
+/*complete purchase button*/
+.complete-purchase-btn{
+  margin-top: 20px;
+  background-color: #a5bcd6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.complete-purchase-btn:hover {
+  background-color: #4981bd;
+}
+
+.car-card:hover .buy-now-button {
+  opacity: 1;
+  visibility: visible;
+}
+
+.car-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.car-info {
+  background-color: rgb(224, 224, 224);
+  padding: 15px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+}
+
+button {
+    background-color: #f9f9f9;
   }
+}
 
 /*car show page styling*/
-  .car-show-container {
-    padding: 20px;
-    max-width: 100%;
-    margin: 20px auto;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
+.car-show-container {
+  padding: 20px;
+  max-width: 100%;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
 
-  .car-show-header {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+.car-show-header {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .car-show-image {
-    width: 350px;
-    border-radius: 10px;
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+.car-show-image {
+  width: 350px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .car-show-detail {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #666;
-  }
+.car-show-detail {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #666;
+}
 
-  .car-show-description {
-    font-size: 16px;
-    color: #666;
-    white-space: pre-line;
-  }
+.car-show-description {
+  font-size: 16px;
+  color: #666;
+  white-space: pre-line;
+}
 
 /*back to list button*/
-  .back-to-list-btn {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-right: 5px;
-    padding: 10px 20px;
-    background-color: #a5bcd6;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
+.back-to-list-btn {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 5px;
+  padding: 10px 20px;
+  background-color: #a5bcd6;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-  .back-to-list-btn:hover {
-    background-color: #4981bd;
-  }
+.back-to-list-btn:hover {
+  background-color: #4981bd;
+}
 
 /*edit button*/
-  .edit-car-btn {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background-color: #a5bcd6;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
+.edit-car-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #a5bcd6;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-  .edit-car-btn:hover {
-    background-color: #4981bd;
-    color: #ffffff;
-  }
+.edit-car-btn:hover {
+  background-color: #4981bd;
+  color: #ffffff;
+}
 
 /*success message*/
-  .success-message {
-    color: green;
-    margin-bottom: 15px;
-  }
+.success-message {
+  color: green;
+  margin-bottom: 15px;
+}
 
 /*delete button*/
-  .delete-car-btn {
-    margin-bottom: 20px;
-    margin-left: 5px;
-    padding: 10px 20px;
-    background-color: #a5bcd6;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
+.delete-car-btn {
+  margin-bottom: 20px;
+  margin-left: 5px;
+  padding: 10px 20px;
+  background-color: #a5bcd6;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-  .delete-car-btn:hover {
-    background-color: #4981bd;
-  }
+.delete-car-btn:hover {
+  background-color: #4981bd;
+}
 
-  .add-car-button {
-    margin-bottom: 20px;
-    margin-right: 5px;
-    padding: 10px 20px;
-    background-color: #a5bcd6;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
+.add-car-button {
+  margin-bottom: 20px;
+  margin-right: 5px;
+  padding: 10px 20px;
+  background-color: #a5bcd6;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-  .add-car-button:hover {
-    background-color: #4981bd;
-  }
+.add-car-button:hover {
+  background-color: #4981bd;
+}
 
-  button.submit-btn {
-    margin-bottom: 20px;
-    margin-right: 5px;
-    margin-left: 20px;
-    padding: 10px 20px;
-    background-color: #a5bcd6;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
+button.submit-btn {
+  margin-bottom: 20px;
+  margin-right: 5px;
+  margin-left: 20px;
+  padding: 10px 20px;
+  background-color: #a5bcd6;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-  button.submit-btn:hover {
-    background-color: #4981bd;
-  }
+button.submit-btn:hover {
+  background-color: #4981bd;
+}
 
-  /*extra-styling*/
-  .form-btn-container {
-    margin-top: 20px;
-  }
+/*extra-styling*/
+.form-btn-container {
+  margin-top: 20px;
+}
+
+/*Congrats message*/
+.congrats-message {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffcc00;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  animation: celebrate 1.5s ease-in-out infinite;
+}
+
+@keyframes celebrate {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}

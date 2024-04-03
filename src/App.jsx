@@ -4,6 +4,7 @@ import CarList from './CarList/CarList';
 import CarShowPage from './CarShowPage/CarShowPage';
 import EditCarPage from './EditCarPage';
 import AddCarForm from './AddCarForm';
+import ShoppingCart from './ShoppingCart/ShoppingCart'; // Import ShoppingCart component
 import './styles.css';
 
 const App = () => {
@@ -37,7 +38,7 @@ const App = () => {
           <Route path="/cars/add" element={<AddCarForm />} />
           <Route path="/cars/:carId" element={<CarShowPage />} />
           <Route path="/cars/edit/:carId" element={<EditCarPage />} />
-          
+          <Route path="/shopping-cart/:carId" element={<ShoppingCart />} />
         </Routes>
       </div>
     </Router>

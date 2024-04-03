@@ -34,10 +34,9 @@ const CarShowPage = () => {
 
   useEffect(() => {
     fetchCarDetails();
-  }, []); // Fetch car details when component mounts
+  }, [carId]); // Ensure carId is a dependency so that this effect runs if carId changes
 
   const handleBackClick = () => {
-    // Navigate back to the inventory page
     navigate('/');
   };
 
@@ -51,12 +50,16 @@ const CarShowPage = () => {
         if (!response.ok) {
           throw new Error('Failed to delete car');
         }
-        navigate('/'); // Redirect back to the inventory list after deletion
+        navigate('/');
       } catch (err) {
         setError(err.message);
         console.error("Deleting car failed:", err);
       }
     }
+  };
+
+  const handleBuyNowClick = () => {
+    navigate(`/shopping-cart/${carId}`); // Navigate to ShoppingCart with carId
   };
 
   if (loading) return <div>Loading...</div>;
@@ -73,9 +76,10 @@ const CarShowPage = () => {
       <h2 className="car-show-header">{car.year} {car.make} {car.model}</h2>
       <img src={car.photo_url} alt={`${car.make} ${car.model}`} className="car-show-image" />
       <div className="car-show-detail"><strong>Color:</strong> {car.color}</div>
-      <div className="car-show-detail"><strong>Mileage:</strong> {car.mileage} miles</div>
-      <div className="car-show-detail"><strong>Price:</strong> ${car.price}</div>
+      <div className="car-show-detail"><strong>Mileage:</strong> {new Intl.NumberFormat('fr-FR').format(car.mileage)} miles</div>
+      <div className="car-show-detail"><strong>Price:</strong> ${new Intl.NumberFormat('en-US').format(car.price)}</div>
       <div className="car-show-description">{car.description}</div>
+      <button className="buy-now-button-static" onClick={handleBuyNowClick}>Buy Now</button>
     </div>
   );
 };
