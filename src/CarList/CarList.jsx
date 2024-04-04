@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles.css';
 import { Link, useNavigate } from 'react-router-dom';
 
-const CarList = ({ cars }) => {
+const CarList = () => {
   const navigate = useNavigate();
+  const [cars, setCars] = useState([]); // State to hold the list of cars
+
+  useEffect(() => {
+    // Fetching cars from backend
+    const fetchCars = async () => {
+      try {
+        const response = await fetch('https://used-car-dealership-be.onrender.com/api/cars/');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setCars(data);
+      } catch (error) {
+        console.error("Error fetching cars:", error);
+      }
+    };
+
+    fetchCars();
+  }, []); // Empty array means this effect runs once on mount
 
   const handleAddCarClick = () => {
     navigate('/cars/add');

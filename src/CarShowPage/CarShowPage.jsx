@@ -34,7 +34,7 @@ const CarShowPage = () => {
 
   useEffect(() => {
     fetchCarDetails();
-  }, [carId]); // Ensure carId is a dependency so that this effect runs if carId changes
+  }, [carId]);
 
   const handleBackClick = () => {
     navigate('/');

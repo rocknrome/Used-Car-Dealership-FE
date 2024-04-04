@@ -324,3 +324,25 @@ button.submit-btn:hover {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
+
+/*credit card form*/
+.form {
+  display: block;
+  grid-template-columns: auto 1fr; /* Adjust so label and input have their own columns */
+  gap: 10px;
+  align-items: center;
+  width: 100%; /* Use the full width of the form container */
+  max-width: 500px; /* Adjust based on your design preference */
+  margin: 0 auto;
+}
+
+.form label {
+  text-align: right; /* Ensure labels are right-aligned */
+  padding-right: 10px; /* Space between label and input */
+}
+
+.form input {
+  justify-self: start; /* Align inputs at the start of their column */
+  padding: 5px;
+  width: 100%; /* Inputs take up the full width of their column */
+}
