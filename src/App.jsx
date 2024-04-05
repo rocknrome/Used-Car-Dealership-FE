@@ -4,7 +4,8 @@ import CarList from './CarList/CarList';
 import CarShowPage from './CarShowPage/CarShowPage';
 import EditCarPage from './EditCarPage';
 import AddCarForm from './AddCarForm';
-import ShoppingCart from './ShoppingCart/ShoppingCart'; // Import ShoppingCart component
+import ShoppingCart from './ShoppingCart/ShoppingCart';
+import Footer from './Footer';
 import './styles.css';
 
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/cars/edit/:carId" element={<EditCarPage />} />
           <Route path="/shopping-cart/:carId" element={<ShoppingCart />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

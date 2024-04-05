@@ -31,7 +31,7 @@ const CarList = () => {
   return (
     <div>
       <div className="header-container">
-        <img src="https://live.staticflickr.com/65535/53627450262_be6b5d1702_n.jpg" alt="Logo" className="logo" />
+        <img src="https://i.ibb.co/5xK9zRc/logo-transparent.png" alt="Logo" className="logo" />
       </div>
       <button onClick={handleAddCarClick} className="add-car-button">Sell Your Car</button>
       <div className="car-list-container">

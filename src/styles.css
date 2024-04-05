@@ -59,16 +59,11 @@
     outline: 4px auto -webkit-focus-ring-color;
   }
 
-  /* Car List Styles */
-  /*.centered-container {
-    max-width: 1200px;
-    margin: auto;
-    text-align: left;
-  }*/
 
 .header-container {
   margin-top: 10px;
   margin-bottom: 25px;
+  background-color: #f1f1f1;
 }
 
 .car-list-container {
@@ -92,14 +87,11 @@
   transform: scale(1.05);
 }
 
-/*car detail(description) styling*/
-
-
 /*buy now button*/
 .buy-now-button {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease; /* Smooth transition for opacity and visibility */
+  transition: opacity 0.2s ease, visibility 0.2s ease;
   margin-top: 10px;
   background-color: #a5bcd6;
   color: white;
@@ -156,6 +148,11 @@
   height: 100%;
   object-fit: contain;
   border-radius: 10px;
+}
+
+.car-card:hover .car-image {
+  transform: scale(1.2);
+  transition: transform 0.75s ease;
 }
 
 .car-info {
@@ -229,6 +226,40 @@ button {
   background-color: #4981bd;
 }
 
+/*edit form*/
+.edit-car-form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.edit-car-form input {
+  justify-self: start;
+  padding: 5px;
+  width: 100%;
+  background-color: #f1f1f1;
+  border-color: #a5bcd6 solid 1px;
+  border-radius: 5px;
+  color: #333;
+}
+
+textarea {
+  padding: 5px;
+  width: 100%;
+  background-color: #f1f1f1;
+  border: solid 0.5px #a5bcd6;
+  border-radius: 5px;
+  color: #333;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+
 /*edit button*/
 .edit-car-btn {
   margin-bottom: 20px;
@@ -286,6 +317,7 @@ button {
 }
 
 button.submit-btn {
+  margin-top: 10px;
   margin-bottom: 20px;
   margin-right: 5px;
   margin-left: 20px;
@@ -309,40 +341,90 @@ button.submit-btn:hover {
 
 /*Congrats message*/
 .congrats-message {
-  margin-top: 20px;
-  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
   background-color: #ffcc00;
   color: #ffffff;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  padding: 20px;
   border-radius: 10px;
-  animation: celebrate 1.5s ease-in-out infinite;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: auto;
+  max-width: 80%;
 }
+
 
 @keyframes celebrate {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
 
+.car-summary {
+  margin-bottom: 30px;
+}
+
 /*credit card form*/
 .form {
   display: block;
-  grid-template-columns: auto 1fr; /* Adjust so label and input have their own columns */
+  grid-template-columns: auto 1fr;
   gap: 10px;
-  align-items: center;
-  width: 100%; /* Use the full width of the form container */
-  max-width: 500px; /* Adjust based on your design preference */
+  align-items: start;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
 }
 
 .form label {
-  text-align: right; /* Ensure labels are right-aligned */
-  padding-right: 10px; /* Space between label and input */
+  text-align: start;
+  padding-right: 10px;
 }
 
 .form input {
-  justify-self: start; /* Align inputs at the start of their column */
+  justify-self: start;
   padding: 5px;
-  width: 100%; /* Inputs take up the full width of their column */
+  width: 100%;
+  background-color: #f1f1f1;
+  border-color: #a5bcd6 solid 0.5px;
+  border-radius: 5px;
+  color: #333;
+}
+
+/*footer styling*/
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-top: 1px solid #e1e1e1;
+  font-size: 14px;
+}
+
+.footer span, .footer a {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.footer img {
+  width: 24px;
+  height: 24px;
+}
+
+/*media queries*/
+@media (max-width: 600px) {
+  .edit-car-form {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .edit-car-form input,
+  .edit-car-form textarea {
+    font-size: 16px;
+  }
 }
