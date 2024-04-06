@@ -14,7 +14,7 @@ This project is a web application designed to manage a used car dealership, prov
 - **Backend:** Django, Django REST Framework
 - **Frontend:** React, Vite
 - **Database:** SQLite / PostgreSQL
-- **Styling:** CSS / Bootstrap / Tailwind CSS
+- **Styling:** CSS 
 
 ## Access the application
 The final project deployed on Render (link)
