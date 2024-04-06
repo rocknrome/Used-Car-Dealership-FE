@@ -20,7 +20,7 @@ This project is a web application designed to manage a used car dealership, prov
 The final project deployed on Render (link)
 
 ## Wireframes
-![alt text](prep/Wireframe.png)
+![Wireframe](https://github.com/rocknrome/Used-Car-Dealership-FE/assets/126816805/04b61fa9-2f4c-4c3e-bbdb-040ce3181494)
 
 ## Screenshots
 (include image web/mobile)
