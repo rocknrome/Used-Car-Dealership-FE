@@ -17,7 +17,7 @@ This project is a web application designed to manage a used car dealership, prov
 - **Styling:** CSS 
 
 ## Access the application
-The final project deployed on Render (link)
+The final project deployed on Netlify: https://golden-daifuku-b91655.netlify.app/
 
 ## Wireframes
 ![Wireframe](https://github.com/rocknrome/Used-Car-Dealership-FE/assets/126816805/d0f36159-5c7b-4fda-9e4e-8710a3b6c0d4)
